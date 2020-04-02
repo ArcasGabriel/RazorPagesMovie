@@ -13,11 +13,11 @@ namespace RazorPagesMovie.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(maxLength: 60, nullable: false),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
-                    Genre = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
-                    Rating = table.Column<string>(nullable: true)
+                    Genre = table.Column<string>(maxLength: 30, nullable: false),
+                    Rating = table.Column<string>(maxLength: 5, nullable: false)
                 },
                 constraints: table =>
                 {
